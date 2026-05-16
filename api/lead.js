@@ -71,7 +71,7 @@ module.exports = async (req, res) => {
       name: (name + ' — ' + (dest || 'Tur paket')),
       pipeline_id: AMO_PIPELINE,
       status_id: AMO_STAGE,
-      tags: [{ name: 'CAPI' }],
+      tags: [{ name: 'CAPI RU' }],
       _embedded: {
         contacts: [{
           name: name,
@@ -94,7 +94,7 @@ module.exports = async (req, res) => {
         {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + AMO_TOKEN },
-          body: JSON.stringify([{ id: amoData[0].id, _embedded: { tags: [{ name: 'CAPI' }] } }])
+          body: JSON.stringify([{ id: amoData[0].id, _embedded: { tags: [{ name: 'CAPI RU' }] } }])
         }
       );
       const tagData = await tagRes.json();
